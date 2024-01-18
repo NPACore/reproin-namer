@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-heudiconv -c none -f reproin -o bids/ --files dcm-rehead/2*/0*/
+
+heudiconv `#-c none --command ls` -f reproin -o bids/ --files dcm-rehead/2*/0*/
+
 # makes bids/MRRC/SPA_Luna/20231103lunapilotspa2/sub-20231103lunapilotspa2/{anat,dwi,fmap,func}
 
 # # INFO: Study session for StudySessionInfo(locator='MRRC/SPA_Luna', session=None, subject='20231103lunapilotspa2')

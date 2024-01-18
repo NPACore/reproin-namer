@@ -1,0 +1,61 @@
+10	11	B1_abs_1slc_singleChannelMode 		      |	10	11	fmap-fieldmap_acq-b1Brain 
+10	1	localizer_cspine			      |	11	11	fmap-fieldmap_acq-b1SkullIGNORE 
+11	11	B1_abs_1slcRing_singleChannelMode 	      |	12	192	anat-MP2RAGE_inv-1_part-mag 
+11	1	localizer_cspine			      |	13	192	anat-MP2RAGE_inv-1_part-phase 
+12	192	MP2RAGEPTX_TR6000_1mmiso		      |	14	192	anat-MP2RAGE_inv-2_part-mag 
+12	5	localizer_cspine			      |	1 	512	deriv_acq-pTx_desc-tablechange
+13	192	MP2RAGEPTX_TR6000_1mmiso		      |	15	192	anat-MP2RAGE_inv-2_part-phase 
+1 	3	localizer 				      |	16	192	anat-MP2RAGE_desc-div 
+14	192	MP2RAGEPTX_TR6000_1mmiso		      |	17	192	anat-T1map
+1 	512	txa_adjust				      |	18	192	anat-MP2RAGE_desc-mask
+15	192	MP2RAGEPTX_TR6000_1mmiso		      |	19	192	anat-UNIT1
+16	192	MP2RAGEPTX_TR6000_1mmiso		      |	20	192	anat-UNIT1_desc-nomask
+17	192	MP2RAGEPTX_TR6000_1mmiso		      |	21	10	func-bold_task-rest 
+18	192	MP2RAGEPTX_TR6000_1mmiso		      |	22	10	derivfunc-bold_desc-moco
+19	192	MP2RAGEPTX_TR6000_1mmiso		      |	23	1	derivanat-t1w 
+20	192	MP2RAGEPTX_TR6000_1mmiso		      |	24	165	fmap-magnitude_acq-b0high 
+21	10	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR   |	25	33	fmap-phase_acq-b0high 
+22	10	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR   |	2 	5	anat-scout_acq-pTx
+23	1	MP2RAGEPTX_TR6000_1mmiso		      |	26	165	fmap-magnitude_acq-b0pfc
+2 	3	localizer 				      |	27	33	fmap-phase_acq-b0pfc
+24	165	PFC_gre_field_mapping_MCxx_B0map_33 	      |	28	66	anat-magnitude_acq-b0recon
+25	33	PFC_gre_field_mapping_MCxx_B0map_33 	      |	29	33	anat-phase_acq-b0recon
+2 	5	localizer 				      |	30	2	fmap-epi_acq-rest_dir-AP
+26	165	PFC_gre_field_mapping_MCxx_B0map_33 	      |	31	2	derivfunc-bold_desc-moco
+27	33	PFC_gre_field_mapping_MCxx_B0map_33 	      |	32	2	fmap-epi_acq-rest_dir-PA
+28	66	B0Scout33Slice_ReconReference 		      |	33	2	derivfunc-bold_desc-moco
+29	33	B0Scout33Slice_ReconReference 		      |	34	680	func-bold_task-rest 
+30	2	cmrr_mbep2d_se_AP_R1x3_Pxl2mm 		      |	35	680	derivfunc-bold_task-rest_desc-moco
+31	2	cmrr_mbep2d_se_AP_R1x3_Pxl2mm 		      |	37	680	derivfunc-bold_task-rest_desc-moco
+3 	160	MPRAGE1p				      |	38	1	dwi-sbref_acq-b0_dir-AP 
+32	2	cmrr_mbep2d_se_PA_R1x3_Pxl2mm 		      |	3 	82	fmap-magnitude_acq-b1 
+33	2	cmrr_mbep2d_se_PA_R1x3_Pxl2mm 		      |	39	1	dwi-sbref_acq-b0_dir-PA 
+34	680	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR   |	40	1	dwi-sbref_dir-PA
+35	680	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR   |	41	122	dwi-dwi_dir-PA
+36	680	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR   |	42	84	dwi-dwi_dir-PA_desc-adc 
+37	680	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR   |	43	1092	dwi-dwi_dir-PA_desc-tracew
+38	1	cmrr_mbep2d_diff_b0_AP_R2x2_Pxl1p5mm_TR5050_b |	4 	41	fmap-phase_acq-b1 
+3 	82	gre_field_mapping_MCxx_B0scout_41 	      |	44	84	dwi-dwi_dir-PA_desc-FA
+39	1	cmrr_mbep2d_diff_b0_PA_R2x2_Pxl1p5mm_TR5050_b |	45	84	dwi-dwi_dir-PA_desc-colFA 
+40	1	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200 |	46	1	dwi-dwi_dir-PA_desc-tensor
+41	126	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200 |	47	44	anat-MTR_acq-yesMT
+4 	160	MPRAGE1p				      |	48	44	anat-MTR_acq-noMT 
+42	84	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200 |	5 	11	anat_acq-b1 
+43	1092	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200 |	6 	176	anat_acq-b1 
+4 	41	gre_field_mapping_MCxx_B0scout_41 	      |	7 	352	fmap-fieldmap_acq-combined-b1 
+44	84	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200 |	8 	205	fmap-magnitude_acq-b0echo5
+45	84	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200 |	9 	41	fmap-phase_acq-b0 
+46	1	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200 <
+47	44	mtgre_yesMT 				      <
+48	44	mtgre_noMT				      <
+5 	11	B1_rel_B0_1slc_merged 			      <
+5 	1	PMRSv160				      <
+6 	176	B1_rel_B0_1slc_merged 			      <
+6 	1	PMRSv160				      <
+7 	352	B1_abs_1slc_merged			      <
+7 	3	MPRAGE1p				      <
+8 	1	PMRS					      <
+8 	205	gre_field_mapping_MCxx_B0map_41 	      <
+9 	3	localizer 				      <
+9 	41	gre_field_mapping_MCxx_B0map_41 	      <
+seqno	ndcm	pname						seqno	ndcm	pname

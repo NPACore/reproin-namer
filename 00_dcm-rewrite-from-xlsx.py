@@ -30,7 +30,8 @@ for i, row in seq_conv.iterrows():
         new_prot = pydicom.DataElement(
             value=row["new_name"], VR="LO", tag=(0x0018, 0x1030)
         )
-        out_dir = f"{int(ex_dcm[(0x0020,0x0012)].value):03d}_{row['new_name']}"
+        seq_num = int(ex_dcm[(0x0020,0x0011)].value)
+        out_dir = f"{seq_num:03d}_{row['new_name']}"
         out_dir = os.path.join("dcm-rehead", ex_dcm[(0x0010, 0x0020)].value, out_dir)
         new_file = os.path.join(out_dir, os.path.basename(ex_dcm_file))
         if os.path.exists(new_file):

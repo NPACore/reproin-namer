@@ -20,7 +20,7 @@ bids-validator@1.11.0
 			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0009.2023.11.03.12.43.12.265625.318785154.IMA
 		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0010.2023.11.03.12.43.12.265625.318785172.IMA
 			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0010.2023.11.03.12.43.12.265625.318785172.IMA
-		... and 5437 more files having this issue (Use --verbose to see them all).
+		... and 4087 more files having this issue (Use --verbose to see them all).
 
 	Please visit https://neurostars.org/search?q=NOT_INCLUDED for existing conversations about this issue.
 
@@ -160,7 +160,7 @@ bids-validator@1.11.0
 	Please visit https://neurostars.org/search?q=README_FILE_MISSING for existing conversations about this issue.
 
         Summary:                  Available Tasks:        Available Modalities: 
-        5465 Files, 2.83GB                                MRI                   
+        4115 Files, 2.61GB                                MRI                   
         1 - Subject                                                             
         1 - Session                                                             
 

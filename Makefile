@@ -1,7 +1,7 @@
 .PHONY: all clean
-.SUFFIXES: txt/output-filelist.txt
+.SUFFIXES:
 
-all: txt/output-filelist.txt txt/validate.txt txt/input-diff.txt
+all: txt/output-filelist.txt txt/validate.txt txt/input-diff.txt txt/input-diff2.txt
 
 txt/input-orig.txt: | txt/
 	# dcmdirtab from lncdtools: https://github.com/lncd/lncdtools
@@ -10,13 +10,16 @@ txt/input-orig.txt: | txt/
 dcm-rehead/:
 	./00_dcm-rewrite-from-xlsx.py
 
-txt/input-repoin.txt: dcm-rehead/ $(wildcard dcm-rehead/2*/0*/) 
+txt/input-reproin.txt: dcm-rehead/ $(wildcard dcm-rehead/2*/0*/)
 	dcmdirtab -d 'dcm-rehead/2*/0*/' > $@
 
-txt/input-diff.txt: txt/input-orig.txt txt/input-repoin.txt
-	bash -c "diff -y <(cut -f 2-4 txt/input-orig.txt|sort) <(cut -f 2-4 txt/input-repoin.txt|sort) || :" > $@
+txt/input-diff.txt: txt/input-orig.txt txt/input-reproin.txt
+	bash -c "diff -W 30 -wby <(cut -f 2-3 txt/input-orig.txt|sort -n) <(cut -f 2-3 txt/input-reproin.txt|sort -n) || :" > $@
 
-bids/: txt/input-repoin.txt
+txt/input-diff2.txt: txt/input-orig.txt txt/input-reproin.txt
+	Rscript seqdiff.R > $@
+
+bids/: txt/input-reproin.txt
 	./01_dcm-bids.sh
 
 txt/output-filelist.txt: bids/

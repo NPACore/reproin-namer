@@ -1,3 +1,4 @@
 .heudiconv/
 dcm-rehead/
 bids/
+.#*

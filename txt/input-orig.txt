@@ -1,0 +1,61 @@
+subj	seqno	ndcm	pname	tr	matrix	acqdir	dname	fullpath
+20231019	1 	3	localizer 	8.6 	 0 256 230 0	ROW 	s001_localizer	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s001_localizer
+20231019	2 	3	localizer 	8.6 	 0 256 230 0	ROW 	s002_localizer	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s002_localizer
+20231019	3 	160	MPRAGE1p	3000	 0 256 184 0	ROW 	s003_MPRAGE1p	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s003_MPRAGE1p
+20231019	4 	160	MPRAGE1p	3000	 0 256 184 0	ROW 	s004_MPRAGE1p	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s004_MPRAGE1p
+20231019	5 	1	PMRSv160	null	null	null	s005_PMRSv160	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s005_PMRSv160
+20231019	6 	1	PMRSv160	null	null	null	s006_PMRSv160	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s006_PMRSv160
+20231019	7 	3	MPRAGE1p	3000	 0 256 184 0	ROW 	s007__MPR_Collection_	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s007__MPR_Collection_
+20231019	8 	1	PMRS	null	null	null	s008_PMRS	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s008_PMRS
+20231019	9 	3	localizer 	8.6 	 0 256 230 0	ROW 	s009_localizer	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s009_localizer
+20231019	10	1	localizer_cspine	8.6 	 0 256 230 0	ROW 	s010_localizer_cspine	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s010_localizer_cspine
+20231019	11	1	localizer_cspine	6 	 0 256 256 0	ROW 	s011_localizer_cspine	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s011_localizer_cspine
+20231019	12	5	localizer_cspine	6 	 0 256 256 0	ROW 	s012_localizer_cspine	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231019PilotP31/DICOM/s012_localizer_cspine
+20231103	1 	512	txa_adjust	null	null	null	s001_txa_adjust	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s001_txa_adjust
+20231103	2 	5	localizer 	8.6 	 0 256 256 0	ROW 	s002_localizer	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s002_localizer
+20231103	3 	82	gre_field_mapping_MCxx_B0scout_41 	320 	 128 0 0 128	COL 	s003_gre_field_mapping_MCxx_B0scout_41	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s003_gre_field_mapping_MCxx_B0scout_41
+20231103	4 	41	gre_field_mapping_MCxx_B0scout_41 	320 	 128 0 0 128	COL 	s004_gre_field_mapping_MCxx_B0scout_41	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s004_gre_field_mapping_MCxx_B0scout_41
+20231103	5 	11	B1_rel_B0_1slc_merged 	120 	 64 0 0 64	COL 	s005_B1_rel_B0_1slc_merged	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s005_B1_rel_B0_1slc_merged
+20231103	6 	176	B1_rel_B0_1slc_merged 	120 	 64 0 0 64	COL 	s006_B1_rel_B0_1slc_merged_B1	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s006_B1_rel_B0_1slc_merged_B1
+20231103	7 	352	B1_abs_1slc_merged	10000 	 64 0 0 64	COL 	s007_B1_abs_1slc_merged_B1	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s007_B1_abs_1slc_merged_B1
+20231103	8 	205	gre_field_mapping_MCxx_B0map_41 	603 	 64 0 0 64	COL 	s008_gre_field_mapping_MCxx_B0map_41	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s008_gre_field_mapping_MCxx_B0map_41
+20231103	9 	41	gre_field_mapping_MCxx_B0map_41 	603 	 64 0 0 64	COL 	s009_gre_field_mapping_MCxx_B0map_41	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s009_gre_field_mapping_MCxx_B0map_41
+20231103	10	11	B1_abs_1slc_singleChannelMode 	10000 	 64 0 0 64	COL 	s010_B1_abs_1slc_singleChannelMode_B1	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s010_B1_abs_1slc_singleChannelMode_B1
+20231103	11	11	B1_abs_1slcRing_singleChannelMode 	10000 	 64 0 0 64	COL 	s011_B1_abs_1slcRing_singleChannelMode_B1	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s011_B1_abs_1slcRing_singleChannelMode_B1
+20231103	12	192	MP2RAGEPTX_TR6000_1mmiso	6000	 0 210 184 0	ROW 	s012_MP2RAGEPTX_TR6000_1mmiso_INV1	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s012_MP2RAGEPTX_TR6000_1mmiso_INV1
+20231103	13	192	MP2RAGEPTX_TR6000_1mmiso	6000	 0 210 184 0	ROW 	s013_MP2RAGEPTX_TR6000_1mmiso_INV1_PHS_FILT	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s013_MP2RAGEPTX_TR6000_1mmiso_INV1_PHS_FILT
+20231103	14	192	MP2RAGEPTX_TR6000_1mmiso	6000	 0 210 184 0	ROW 	s014_MP2RAGEPTX_TR6000_1mmiso_INV2	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s014_MP2RAGEPTX_TR6000_1mmiso_INV2
+20231103	15	192	MP2RAGEPTX_TR6000_1mmiso	6000	 0 210 184 0	ROW 	s015_MP2RAGEPTX_TR6000_1mmiso_INV2_PHS_FILT	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s015_MP2RAGEPTX_TR6000_1mmiso_INV2_PHS_FILT
+20231103	16	192	MP2RAGEPTX_TR6000_1mmiso	6000	 0 210 184 0	ROW 	s016_MP2RAGEPTX_TR6000_1mmiso_DIV_Images	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s016_MP2RAGEPTX_TR6000_1mmiso_DIV_Images
+20231103	17	192	MP2RAGEPTX_TR6000_1mmiso	6000	 0 210 184 0	ROW 	s017_MP2RAGEPTX_TR6000_1mmiso_T1_Images	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s017_MP2RAGEPTX_TR6000_1mmiso_T1_Images
+20231103	18	192	MP2RAGEPTX_TR6000_1mmiso	6000	 0 210 184 0	ROW 	s018_MP2RAGEPTX_TR6000_1mmiso_HeadMask	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s018_MP2RAGEPTX_TR6000_1mmiso_HeadMask
+20231103	19	192	MP2RAGEPTX_TR6000_1mmiso	6000	 0 210 184 0	ROW 	s019_MP2RAGEPTX_TR6000_1mmiso_UNI-DEN	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s019_MP2RAGEPTX_TR6000_1mmiso_UNI-DEN
+20231103	20	192	MP2RAGEPTX_TR6000_1mmiso	6000	 0 210 184 0	ROW 	s020_MP2RAGEPTX_TR6000_1mmiso_UNI_Images	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s020_MP2RAGEPTX_TR6000_1mmiso_UNI_Images
+20231103	21	10	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR 	1300	 110 0 0 110	COL 	s021_cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s021_cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR
+20231103	22	10	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR 	1300	 110 0 0 110	COL 	s022_MoCoSeries	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s022_MoCoSeries
+20231103	23	1	MP2RAGEPTX_TR6000_1mmiso	6000	 0 210 184 0	ROW 	s023__MPR_Collection_	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s023__MPR_Collection_
+20231103	24	165	PFC_gre_field_mapping_MCxx_B0map_33 	500 	 64 0 0 64	COL 	s024_PFC_gre_field_mapping_MCxx_B0map_33	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s024_PFC_gre_field_mapping_MCxx_B0map_33
+20231103	25	33	PFC_gre_field_mapping_MCxx_B0map_33 	500 	 64 0 0 64	COL 	s025_PFC_gre_field_mapping_MCxx_B0map_33	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s025_PFC_gre_field_mapping_MCxx_B0map_33
+20231103	26	165	PFC_gre_field_mapping_MCxx_B0map_33 	500 	 64 0 0 64	COL 	s026_PFC_gre_field_mapping_MCxx_B0map_33	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s026_PFC_gre_field_mapping_MCxx_B0map_33
+20231103	27	33	PFC_gre_field_mapping_MCxx_B0map_33 	500 	 64 0 0 64	COL 	s027_PFC_gre_field_mapping_MCxx_B0map_33	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s027_PFC_gre_field_mapping_MCxx_B0map_33
+20231103	28	66	B0Scout33Slice_ReconReference 	323 	 128 0 0 128	COL 	s028_B0Scout33Slice_ReconReference	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s028_B0Scout33Slice_ReconReference
+20231103	29	33	B0Scout33Slice_ReconReference 	323 	 128 0 0 128	COL 	s029_B0Scout33Slice_ReconReference	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s029_B0Scout33Slice_ReconReference
+20231103	30	2	cmrr_mbep2d_se_AP_R1x3_Pxl2mm 	5000	 110 0 0 110	COL 	s030_cmrr_mbep2d_se_AP_R1x3_Pxl2mm	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s030_cmrr_mbep2d_se_AP_R1x3_Pxl2mm
+20231103	31	2	cmrr_mbep2d_se_AP_R1x3_Pxl2mm 	5000	 110 0 0 110	COL 	s031_MoCoSeries	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s031_MoCoSeries
+20231103	32	2	cmrr_mbep2d_se_PA_R1x3_Pxl2mm 	5000	 110 0 0 110	COL 	s032_cmrr_mbep2d_se_PA_R1x3_Pxl2mm	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s032_cmrr_mbep2d_se_PA_R1x3_Pxl2mm
+20231103	33	2	cmrr_mbep2d_se_PA_R1x3_Pxl2mm 	5000	 110 0 0 110	COL 	s033_MoCoSeries	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s033_MoCoSeries
+20231103	34	680	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR 	1300	 110 0 0 110	COL 	s034_cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s034_cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR
+20231103	35	680	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR 	1300	 110 0 0 110	COL 	s035_MoCoSeries	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s035_MoCoSeries
+20231103	36	680	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR 	1300	 110 0 0 110	COL 	s036_cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s036_cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR
+20231103	37	680	cmrr_mbep2d_bold_R2x3_Pxl2_TR1300_NOSHIMERR 	1300	 110 0 0 110	COL 	s037_MoCoSeries	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s037_MoCoSeries
+20231103	38	1	cmrr_mbep2d_diff_b0_AP_R2x2_Pxl1p5mm_TR5050_b300DD22	5500	 148 0 0 148	COL 	s038_cmrr_mbep2d_diff_b0_AP_R2x2_Pxl1p5mm_TR5050_b300DD	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s038_cmrr_mbep2d_diff_b0_AP_R2x2_Pxl1p5mm_TR5050_b300DD
+20231103	39	1	cmrr_mbep2d_diff_b0_PA_R2x2_Pxl1p5mm_TR5050_b300DD22	5500	 148 0 0 148	COL 	s039_cmrr_mbep2d_diff_b0_PA_R2x2_Pxl1p5mm_TR5050_b300DD	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s039_cmrr_mbep2d_diff_b0_PA_R2x2_Pxl1p5mm_TR5050_b300DD
+20231103	40	1	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97 	5500	 148 0 0 148	COL 	s040_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s040_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_
+20231103	41	126	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97 	5500	 148 0 0 148	COL 	s041_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s041_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97
+20231103	42	84	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97 	5500	 148 0 0 148	COL 	s042_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s042_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_
+20231103	43	1092	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97 	5500	 148 0 0 148	COL 	s043_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s043_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_
+20231103	44	84	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97 	5500	 148 0 0 148	COL 	s044_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s044_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_
+20231103	45	84	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97 	null	null	null	s045_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s045_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_
+20231103	46	1	cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97 	null	null	null	s046_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s046_cmrr_mbep2d_diff_PA_R2x2_Pxl1p5mm_TR5050_b200DD97_
+20231103	47	44	mtgre_yesMT 	150 	 0 144 126 0	ROW 	s047_mtgre_yesMT	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s047_mtgre_yesMT
+20231103	48	44	mtgre_noMT	150 	 0 144 126 0	ROW 	s048_mtgre_noMT	/Volumes/Hera/Raw/MRprojects/SPA/Pilot/20231103Luna_PilotSPA2/DICOM/s048_mtgre_noMT

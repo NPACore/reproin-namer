@@ -3,6 +3,9 @@
 
 all: txt/output-filelist.txt txt/validate.txt txt/input-diff.txt txt/input-diff2.txt
 
+.venv/bin/activate:
+	./setup_env.bash
+
 txt/input-orig.txt: | txt/
 	# dcmdirtab from lncdtools: https://github.com/lncd/lncdtools
 	dcmdirtab -d '/Volumes/Hera/Raw/MRprojects/SPA/Pilot/2*/DICOM/*' > $@
@@ -19,13 +22,16 @@ txt/input-diff.txt: txt/input-orig.txt txt/input-reproin.txt
 txt/input-diff2.txt: txt/input-orig.txt txt/input-reproin.txt
 	Rscript seqdiff.R > $@
 
-bids/: txt/input-reproin.txt
+bids/:  txt/input-reproin.txt .venv/bin/activate
 	./01_dcm-bids.sh
 
 txt/output-filelist.txt: bids/
 	find bids/ -iname '*nii.gz' -or -iname '*json' > $@
 
-txt/validate.txt: bids/
+bids/MRRC/SPA_Luna/20231103lunapilotspa2/.bidsignore: bidsignore
+	cp $< $@
+
+txt/validate.txt: bids/ bids/MRRC/SPA_Luna/20231103lunapilotspa2/.bidsignore
 	# NB. last directory shouldn't exist? see readme issues
 	bids-validator --no-color bids/MRRC/SPA_Luna/20231103lunapilotspa2/ |tee $@
 

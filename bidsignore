@@ -1,0 +1,3 @@
+*_dicom/
+*__dup-*nii.gz
+*__dup-*json

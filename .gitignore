@@ -2,3 +2,4 @@
 dcm-rehead/
 bids/
 .#*
+.venv/

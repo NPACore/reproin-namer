@@ -8,7 +8,7 @@
    * Ideal for input in [fmriprep](https://fmriprep.org/en/stable/)
    * other [BIDS apps](https://github.com/bids-apps/)
    * [Flywheel gears](https://flywheel.io/gear-exchange/#:~:text=View%20Source-,gear%20library,-Gradient%20Anisotropic%20Diffusion).
-   * and maybe (hopeful future) facilitate NIH share mandate compliance
+   * and maybe (hopeful future) facilitate NIH share mandate compliance (cf. [bids2nda](https://github.com/bids-standard/bids2nda))
    * for validation see [bids-validator](https://github.com/bids-standard/bids-validator/) (nodejs)
 
 # Pipeline
@@ -37,15 +37,15 @@ See [`output-filelist.txt`](txt/output-filelist.txt) for full list.
 | [`input-orig.txt`](txt/input-orig.txt)      | original dicom headers per folder |
 | [`input-repoin.txt`](txt/input-repoin.txt)  | edited dicom headers using `7T-LunaSPA_ReproIn-SeqName.xlsx` (`00_dcm-rewrite-from-xlsx.py`)|
 | [`output-filelist.txt`](txt/output-filelist.txt) | heudiconv output: BIDS filelist |
-| [`validate.txt`](txt/validate.txt)          | `bids-validator` output|
+| [`validate.txt`](txt/validate.txt)          | `bids-validator` output, using [.bidsignore](bidsignore)|
 
 # Issues
-* Does not pass bids validation. see [`validate.txt`](txt/validate.txt).
-* how to encode session? only need in one sequence name?
-* no `.json` files!? (see missing in [`output-filelist.txt`](txt/output-filelist.txt))
-* have `_magnitude_heudiconv323_e1.nii.gz` but want `_echo-1_magnitude.nii.gz`
 * path `SPA_Luna/20231103lunapilotspa2/sub-20231103lunapilotspa2` has redudant ID folder. Should be `SPA_Luna/sub-20231103lunapilotspa2`?
-* `_dicom/` directoires are unwanted (but not a problem for Flywheel?) 
+* Does not pass bids validation. see [`validate.txt`](txt/validate.txt).
+  * multiple echos as e.g. `_heudiconv323_e5` instead of `_echo-5` 
+  * no `.json` files!? (see missing in [`output-filelist.txt`](txt/output-filelist.txt))
+* how to encode session? only need in one sequence name?
+* `_dicom/` directoires are unwanted (but not a problem for Flywheel?). Ignored with [.bidsignore](bidsignore)
 
 # Dicom Notes
 
@@ -55,6 +55,7 @@ See [`output-filelist.txt`](txt/output-filelist.txt) for full list.
 | dicom header | example value |
 |-- |--|
 |`(0008, 1030) Study Description`| `LO: 'MRRC^SPA_Luna'`|
+|`(0010, 0010) PAT Patient Name` | `LO: '20231103Luna_PilotSPA2'` |
 |`(0010, 0020) Patient ID`       | `LO: '20231103Luna_PilotSPA2` |
 |`(0018, 1030) Protocol Name`    | `LO: 'mtgre_noMT'`|
 |`(0020, 0011) Series Number`    | `IS: '48'`|

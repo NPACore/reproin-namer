@@ -1,26 +1,26 @@
-bids-validator@1.11.0
+bids-validator@1.14.0
 	1: [ERR] Files with such naming scheme are not part of BIDS specification. This error is most commonly caused by typos in file names that make them not BIDS compatible. Please consult the specification and make sure your files are named correctly. If this is not a file naming issue (for example when including files not yet covered by the BIDS specification) you should include a ".bidsignore" file in your dataset (see https://github.com/bids-standard/bids-validator#bidsignore for details). Please note that derived (processed) data should be placed in /derivatives folder and source data (such as DICOMS or behavioural logs in proprietary formats) should be placed in the /sourcedata folder. (code: 1 - NOT_INCLUDED)
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0001.2023.11.03.12.43.12.265625.318785010.IMA
-			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0001.2023.11.03.12.43.12.265625.318785010.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0002.2023.11.03.12.43.12.265625.318785028.IMA
-			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0002.2023.11.03.12.43.12.265625.318785028.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0003.2023.11.03.12.43.12.265625.318785046.IMA
-			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0003.2023.11.03.12.43.12.265625.318785046.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0004.2023.11.03.12.43.12.265625.318785064.IMA
-			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0004.2023.11.03.12.43.12.265625.318785064.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0005.2023.11.03.12.43.12.265625.318785082.IMA
-			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0005.2023.11.03.12.43.12.265625.318785082.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0006.2023.11.03.12.43.12.265625.318785100.IMA
-			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0006.2023.11.03.12.43.12.265625.318785100.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0007.2023.11.03.12.43.12.265625.318785118.IMA
-			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0007.2023.11.03.12.43.12.265625.318785118.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0008.2023.11.03.12.43.12.265625.318785136.IMA
-			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0008.2023.11.03.12.43.12.265625.318785136.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0009.2023.11.03.12.43.12.265625.318785154.IMA
-			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0009.2023.11.03.12.43.12.265625.318785154.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0010.2023.11.03.12.43.12.265625.318785172.IMA
-			Evidence: 20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0010.2023.11.03.12.43.12.265625.318785172.IMA
-		... and 4087 more files having this issue (Use --verbose to see them all).
+		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_heudiconv744_e1.nii.gz
+			Evidence: sub-20231103lunapilotspa2_acq-b0recon_magnitude_heudiconv744_e1.nii.gz
+		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_heudiconv744_e2.nii.gz
+			Evidence: sub-20231103lunapilotspa2_acq-b0recon_magnitude_heudiconv744_e2.nii.gz
+		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_phase.nii.gz
+			Evidence: sub-20231103lunapilotspa2_acq-b0recon_phase.nii.gz
+		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b1.nii.gz
+			Evidence: sub-20231103lunapilotspa2_acq-b1.nii.gz
+		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-noMT_MTR.nii.gz
+			Evidence: sub-20231103lunapilotspa2_acq-noMT_MTR.nii.gz
+		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-yesMT_MTR.nii.gz
+			Evidence: sub-20231103lunapilotspa2_acq-yesMT_MTR.nii.gz
+		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_desc-div_MP2RAGE.nii.gz
+			Evidence: sub-20231103lunapilotspa2_desc-div_MP2RAGE.nii.gz
+		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_desc-mask_MP2RAGE.nii.gz
+			Evidence: sub-20231103lunapilotspa2_desc-mask_MP2RAGE.nii.gz
+		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_desc-nomask_UNIT1.nii.gz
+			Evidence: sub-20231103lunapilotspa2_desc-nomask_UNIT1.nii.gz
+		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0_phase.nii.gz
+			Evidence: sub-20231103lunapilotspa2_acq-b0_phase.nii.gz
+		... and 20 more files having this issue (Use --verbose to see them all).
 
 	Please visit https://neurostars.org/search?q=NOT_INCLUDED for existing conversations about this issue.
 
@@ -68,82 +68,31 @@ bids-validator@1.11.0
 
 	Please visit https://neurostars.org/search?q=DATASET_DESCRIPTION_JSON_MISSING for existing conversations about this issue.
 
-	10: [ERR] Task Name contain an Illegal Character hyphen or underscore. Please edit the filename as per BIDS spec. (code: 58 - TASK_NAME_CONTAIN_ILLEGAL_CHARACTER)
-		./sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01.nii.gz
-			Evidence: task name contains illegal character:/sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01.nii.gz
-		./sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0021.0002.2023.11.03.12.43.12.265625.318816380.IMA
-			Evidence: task name contains illegal character:/sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0021.0002.2023.11.03.12.43.12.265625.318816380.IMA
-		./sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0021.0004.2023.11.03.12.43.12.265625.318816416.IMA
-			Evidence: task name contains illegal character:/sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0021.0004.2023.11.03.12.43.12.265625.318816416.IMA
-		./sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0021.0006.2023.11.03.12.43.12.265625.318816452.IMA
-			Evidence: task name contains illegal character:/sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0021.0006.2023.11.03.12.43.12.265625.318816452.IMA
-		./sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0021.0008.2023.11.03.12.43.12.265625.318816488.IMA
-			Evidence: task name contains illegal character:/sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0021.0008.2023.11.03.12.43.12.265625.318816488.IMA
-		./sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0021.0010.2023.11.03.12.43.12.265625.318816524.IMA
-			Evidence: task name contains illegal character:/sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold__dup-01_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0021.0010.2023.11.03.12.43.12.265625.318816524.IMA
-		./sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0034.0002.2023.11.03.12.43.12.265625.318837912.IMA
-			Evidence: task name contains illegal character:/sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0034.0002.2023.11.03.12.43.12.265625.318837912.IMA
-		./sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0034.0004.2023.11.03.12.43.12.265625.318837948.IMA
-			Evidence: task name contains illegal character:/sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0034.0004.2023.11.03.12.43.12.265625.318837948.IMA
-		./sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0034.0006.2023.11.03.12.43.12.265625.318837984.IMA
-			Evidence: task name contains illegal character:/sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0034.0006.2023.11.03.12.43.12.265625.318837984.IMA
-		./sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0034.0008.2023.11.03.12.43.12.265625.318838020.IMA
-			Evidence: task name contains illegal character:/sub-20231103lunapilotspa2/func/sub-20231103lunapilotspa2_task-rest_bold_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0034.0008.2023.11.03.12.43.12.265625.318838020.IMA
-		... and 336 more files having this issue (Use --verbose to see them all).
-
-	Please visit https://neurostars.org/search?q=TASK_NAME_CONTAIN_ILLEGAL_CHARACTER for existing conversations about this issue.
-
-	11: [ERR] acq Name contain an Illegal Character hyphen or underscore. Please edit the filename as per BIDS spec. (code: 59 - ACQ_NAME_CONTAIN_ILLEGAL_CHARACTER)
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0001.2023.11.03.12.43.12.265625.318828662.IMA
-			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0001.2023.11.03.12.43.12.265625.318828662.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0002.2023.11.03.12.43.12.265625.318828968.IMA
-			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0002.2023.11.03.12.43.12.265625.318828968.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0003.2023.11.03.12.43.12.265625.318828680.IMA
-			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0003.2023.11.03.12.43.12.265625.318828680.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0004.2023.11.03.12.43.12.265625.318828986.IMA
-			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0004.2023.11.03.12.43.12.265625.318828986.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0005.2023.11.03.12.43.12.265625.318828698.IMA
-			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0005.2023.11.03.12.43.12.265625.318828698.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0006.2023.11.03.12.43.12.265625.318829004.IMA
-			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0006.2023.11.03.12.43.12.265625.318829004.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0007.2023.11.03.12.43.12.265625.318828716.IMA
-			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0007.2023.11.03.12.43.12.265625.318828716.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0008.2023.11.03.12.43.12.265625.318829022.IMA
-			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0008.2023.11.03.12.43.12.265625.318829022.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0009.2023.11.03.12.43.12.265625.318828734.IMA
-			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0009.2023.11.03.12.43.12.265625.318828734.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0010.2023.11.03.12.43.12.265625.318829040.IMA
-			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0028.0010.2023.11.03.12.43.12.265625.318829040.IMA
-		... and 675 more files having this issue (Use --verbose to see them all).
+	10: [ERR] acq Name contain an Illegal Character hyphen or underscore. Please edit the filename as per BIDS spec. (code: 59 - ACQ_NAME_CONTAIN_ILLEGAL_CHARACTER)
+		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_heudiconv744_e1.nii.gz
+			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_acq-b0recon_magnitude_heudiconv744_e1.nii.gz
+		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0echo5_magnitude_heudiconv270_e1.nii.gz
+			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0echo5_magnitude_heudiconv270_e1.nii.gz
+		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0echo5_magnitude_heudiconv270_e3.nii.gz
+			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0echo5_magnitude_heudiconv270_e3.nii.gz
+		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0echo5_magnitude_heudiconv270_e5.nii.gz
+			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0echo5_magnitude_heudiconv270_e5.nii.gz
+		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0high_magnitude_heudiconv245_e2.nii.gz
+			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0high_magnitude_heudiconv245_e2.nii.gz
+		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0high_magnitude_heudiconv245_e4.nii.gz
+			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0high_magnitude_heudiconv245_e4.nii.gz
+		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0pfc_magnitude_heudiconv470_e1.nii.gz
+			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0pfc_magnitude_heudiconv470_e1.nii.gz
+		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0pfc_magnitude_heudiconv470_e3.nii.gz
+			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0pfc_magnitude_heudiconv470_e3.nii.gz
+		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0pfc_magnitude_heudiconv470_e5.nii.gz
+			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b0pfc_magnitude_heudiconv470_e5.nii.gz
+		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b1_magnitude_heudiconv143_e1.nii.gz
+			Evidence: acq name contains illegal character:/sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b1_magnitude_heudiconv143_e1.nii.gz
 
 	Please visit https://neurostars.org/search?q=ACQ_NAME_CONTAIN_ILLEGAL_CHARACTER for existing conversations about this issue.
 
-	12: [ERR] Sub label contain an Illegal Character hyphen or underscore. Please edit the filename as per BIDS spec. (code: 62 - SUBJECT_VALUE_CONTAINS_ILLEGAL_CHARACTER)
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0001.2023.11.03.12.43.12.265625.318785010.IMA
-			Evidence: sub name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0001.2023.11.03.12.43.12.265625.318785010.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0003.2023.11.03.12.43.12.265625.318785046.IMA
-			Evidence: sub name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0003.2023.11.03.12.43.12.265625.318785046.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0005.2023.11.03.12.43.12.265625.318785082.IMA
-			Evidence: sub name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0005.2023.11.03.12.43.12.265625.318785082.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0007.2023.11.03.12.43.12.265625.318785118.IMA
-			Evidence: sub name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0007.2023.11.03.12.43.12.265625.318785118.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0009.2023.11.03.12.43.12.265625.318785154.IMA
-			Evidence: sub name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0009.2023.11.03.12.43.12.265625.318785154.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0011.2023.11.03.12.43.12.265625.318785190.IMA
-			Evidence: sub name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0011.2023.11.03.12.43.12.265625.318785190.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0013.2023.11.03.12.43.12.265625.318785226.IMA
-			Evidence: sub name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0013.2023.11.03.12.43.12.265625.318785226.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0015.2023.11.03.12.43.12.265625.318785262.IMA
-			Evidence: sub name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0015.2023.11.03.12.43.12.265625.318785262.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0017.2023.11.03.12.43.12.265625.318797458.IMA
-			Evidence: sub name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0017.2023.11.03.12.43.12.265625.318797458.IMA
-		./sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0019.2023.11.03.12.43.12.265625.318797494.IMA
-			Evidence: sub name contains illegal character:/sub-20231103lunapilotspa2/anat/sub-20231103lunapilotspa2_T1map_dicom/20231103LUNA_PILOTSPA2.MR.MRRC_SPA_LUNA.0017.0019.2023.11.03.12.43.12.265625.318797494.IMA
-		... and 182 more files having this issue (Use --verbose to see them all).
-
-	Please visit https://neurostars.org/search?q=SUBJECT_VALUE_CONTAINS_ILLEGAL_CHARACTER for existing conversations about this issue.
-
-	13: [ERR] _fieldmap.nii[.gz] file does not have accompanying _magnitude.nii[.gz] file.  (code: 91 - _FIELDMAP_WITHOUT_MAGNITUDE_FILE)
+	11: [ERR] _fieldmap.nii[.gz] file does not have accompanying _magnitude.nii[.gz] file.  (code: 91 - _FIELDMAP_WITHOUT_MAGNITUDE_FILE)
 		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b1Brain_fieldmap.nii.gz
 		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-b1SkullIGNORE_fieldmap.nii.gz
 		./sub-20231103lunapilotspa2/fmap/sub-20231103lunapilotspa2_acq-combinedXb1_fieldmap.nii.gz
@@ -160,7 +109,7 @@ bids-validator@1.11.0
 	Please visit https://neurostars.org/search?q=README_FILE_MISSING for existing conversations about this issue.
 
         Summary:                  Available Tasks:        Available Modalities: 
-        4115 Files, 2.61GB                                MRI                   
+        48 Files, 630.62MB                                MRI                   
         1 - Subject                                                             
         1 - Session                                                             
 

@@ -31,9 +31,9 @@ txt/output-filelist.txt: bids/
 bids/MRRC/SPA_Luna/20231103lunapilotspa2/.bidsignore: bidsignore
 	cp $< $@
 
-txt/validate.txt: bids/ bids/MRRC/SPA_Luna/20231103lunapilotspa2/.bidsignore
+txt/validate.txt:	bids/ bids/MRRC/SPA_Luna/20231103lunapilotspa2/.bidsignore
 	# NB. last directory shouldn't exist? see readme issues
-	bids-validator --no-color bids/MRRC/SPA_Luna/20231103lunapilotspa2/ |tee $@
+	bids-validator --verbose --no-color bids/MRRC/SPA_Luna/20231103lunapilotspa2/ |tee $@
 
 %/:
 	mkdir -p $@

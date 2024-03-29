@@ -2,7 +2,7 @@
 * [ReproIn](https://dbic-handbook.readthedocs.io/en/latest/mri/reproin.html) sequence name convention/standard
   * Siemens' scanner `Dot Cockpit` and `Exam Card` setup [walk through](https://github.com/ReproNim/reproin/blob/master/docs/walkthrough-1.md) (with screenshots)
   * automation implemented by [heudiconv](https://github.com/nipy/heudiconv/). See [reproin.py](https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py)
-  * [WF's SPA7T example transition worksheet](./7T-LunaSPA_ReproIn-SeqName.xlsx): MRRC template to ReproIn using a formula with per column BIDS key-value pairs.
+  * [ReproIn Creator Spreedsheet](./ReproIn-creator.xlsx): MRRC template to ReproIn using a formula with per column BIDS key-value pairs. ![sheet with dropdown](ReproInCreator.png)
   * [Flywheel Study Design Sheet](https://docs.google.com/spreadsheets/d/1Yd74ewWAk4roA-IBfrQuOSMNR4DPxhB9/edit#gid=1495259008) (cf. [gitlab template folder](https://gitlab.com/flywheel-io/public/bids-client/-/tree/master/flywheel_bids/templates))
 * goal is near automated [BIDS](https://bids-specification.readthedocs.io/en/stable/#the-brain-imaging-data-structure) Brain Imaging Data Structure conforming scanner dicom to nifti image+json sidecar name conversion.
    * Ideal for input in [fmriprep](https://fmriprep.org/en/stable/)

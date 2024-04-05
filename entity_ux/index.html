@@ -84,7 +84,12 @@ function fill_suffix_opts(){
   for(dt in entity_table){
       for(i in entity_table[dt]){
           s =  entity_table[dt][i]; // NB use index for value in label select. will use for onclick=choose
-          const bids_link = `https://bids-specification.readthedocs.io/en/stable/glossary.html#${s['value'].toLowerCase()}-suffixes`
+          const lcname = s['value'].toLowerCase();
+          const bids_link = `https://bids-specification.readthedocs.io/en/stable/glossary.html#${lcname}-suffixes`;
+          // WIP: use #:~:text= fragment url to go to yaml definition
+          const bids_yaml = `https://github.com/bids-standard/bids-specification/blob/master/src/schema/objects/suffixes.yaml#:~:text=${s['value']}:,value:%20${lcname}`;
+          // <a href="${bids_yaml}" class=bids-link targegt=_blank>[def]</a>
+
           const code_span = `<span class=entity-code>[${dt}/${s['value']}]</span>`
           new_html += `<div class=entity-item><h3>${code_span} ${s['display_name']} <a href="${bids_link}" class=bids-link target=_blank>BIDS glossary</a></h3>`
           new_html += `<p>${s['description']}</p>`;
@@ -185,7 +190,7 @@ function choose(dt, i) {
    <br>
   </div>
   <div id="reproin">
-    <h2>Create a <a href="https://dbic-handbook.readthedocs.io/en/latest/mri/reproin.html">Reproin </a>spec conforming sequence name</h2>
+    <h2>Create a <a href="https://dbic-handbook.readthedocs.io/en/latest/mri/reproin.html">ReproIn </a>spec conforming sequence name</h2>
         Pick a DataType and Suffix label to dynamically generate a name within the cockpit image below (text is selectable and copyable). <br>See <a href="#suffix-options"> enumerated descriptions </a> below for more info. <br> <span style=font-size:smaller> Suffix and entities details are described in <a href="https://bids-specification.readthedocs.io/en/stable/glossary.html">BIDS glossary</a>. Entity requirements are also tabulated in adjacent <a href="https://bids-specification.readthedocs.io/en/stable/appendices/entity-table.html"> BIDS entity table</a> documentation.</span>
 <br>
     <b style="font-size:smaller">Hint: hover your mouse over label options or entity text boxes to see the tooltip description</b></br>
@@ -211,7 +216,8 @@ function choose(dt, i) {
     <div class="desc" id="description"></div>
     <br>
 
-    <h2>Reproin specification</h2>
+    <h2>ReproIn specification</h2>
+    Defined on  <a href="https://dbic-handbook.readthedocs.io/en/latest/mri/reproin.html">dbic-handbook</a>. Parsed from DICOM to <a href="https://bids.neuroimaging.io/">BIDS</a> conforming nifti+json file hierarchy by <a href="https://heudiconv.readthedocs.io/en/latest/">heudiconv</a> in <a href="https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py">reproin.py</a>, ready to be input for <a href="https://bids-apps.neuroimaging.io/apps/">BIDS Apps</a>.
     <pre><code>
       &lt;seqtype[-label]&gt;[_ses-&lt;SESID&gt;]
       [_task-&lt;TASKID&gt;][_acq-&lt;ACQLABEL&gt;][_run-&lt;RUNID&gt;][_dir-&lt;DIR&gt;][&lt;more BIDS&gt;]

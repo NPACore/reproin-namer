@@ -8,6 +8,7 @@ div#description {
     background: peachpuff;
     height: 7em; color: #333; font-size:small;
 }
+a.bids-link { font-size:x-small; }
 
 /* text over a cockpit image background */
 div#reproin-name {
@@ -57,7 +58,7 @@ input[type=text] {
 </style>
 <script>
 var entity_table;
-var RI_entity_order = ['ses','task','acq','run','dir']
+//var RI_entity_order = ['ses','task','acq','run','dir']
 async function fetch_entity(){
     const bids_json_url = "bids-table_ver-1.10.0dev.json";
     const resp = await fetch(bids_json_url)
@@ -77,8 +78,11 @@ function fill_suffix_opts(){
   var new_html = "";
   for(dt in entity_table){
       for(i in entity_table[dt]){
-          s =  entity_table[dt][i]; // NB use index for value in label select
-          new_html += `<div class=entity-item><h3><span class=entity-code>[${dt}/${s['value']}]</span> ${s['display_name']}</h3><p>${s['description']}</p>`;
+          s =  entity_table[dt][i]; // NB use index for value in label select. will use for onclick=choose
+          const bids_link = `https://bids-specification.readthedocs.io/en/stable/glossary.html#${s['value'].toLowerCase()}-suffixes`
+          const code_span = `<span class=entity-code>[${dt}/${s['value']}]</span>`
+          new_html += `<div class=entity-item><h3>${code_span} ${s['display_name']} <a href="${bids_link}" class=bids-link target=_blank>BIDS glossary</a></h3>`
+          new_html += `<p>${s['description']}</p>`;
           const entries = entity_table[dt][i]['entities'];
           var required = [];
           for(e in entries) {
@@ -133,7 +137,7 @@ function suffix_updated(){
     const e = s["entities"][e_name]
     if(e['name'] == 'sub'){ continue; }
     const new_input = `<input id='entity-${e['name']}' name='${e['name']}' type=text placeholder='${e['display_name']}' class='${e['required']}' oninput='update_name()' title='${e['description']}'/>`;
-    console.log(new_input);
+    //console.log(new_input);
     ent_inputs.innerHTML += new_input;
     if(++i%n_on_line == 0){
         ent_inputs.innerHTML += "<br>";
@@ -153,7 +157,7 @@ function update_name(){
   const inputs_div = document.getElementById('entities-text');
   for(e of inputs_div.children){
       if(e.value == "" || e.value === undefined) { continue;}
-      console.log(e.name,e.value)
+      //console.log(e.name,e.value)
       reproin_name += "_" + e.name + "-" + e.value;
   }
   document.getElementById('reproin-name').innerHTML = reproin_name;
@@ -172,7 +176,8 @@ function choose(dt, i) {
 <body onload="fetch_entity()">
   <div id="reproin">
     <h2>Create a <a href="https://dbic-handbook.readthedocs.io/en/latest/mri/reproin.html">Reproin </a>spec conforming sequence name</h2>
-    Pick a DataType and Suffix label to dynamically generate a name within the cockpit image below (text is selectable and copyable). <br>See <a href="#suffix-options"> enumerated descriptions </a> below for more info. <br>
+        Pick a DataType and Suffix label to dynamically generate a name within the cockpit image below (text is selectable and copyable). <br>See <a href="#suffix-options"> enumerated descriptions </a> below for more info. <br> <span style=font-size:smaller> Suffix and entities details are described in <a href="https://bids-specification.readthedocs.io/en/stable/glossary.html">BIDS glossary</a>. Entity requirements are also tabulated in adjacent <a href="https://bids-specification.readthedocs.io/en/stable/appendices/entity-table.html"> BIDS entity table</a> documentation.</span>
+<br>
     <b style="font-size:smaller">Hint: hover your mouse over label options or entity text boxes to see the tooltip description</b></br>
     <div id="all-reproin-inputs">
       <div id=cont-datatype class=column>

@@ -1,5 +1,5 @@
 # Namer
-[`entity_ux/`](entity_ux/) contains a web app to guide naming sequences as an alternative to the [ReproIn Creator Spreedsheet](./ReproIn-creator.xlsx).
+[`entity_ux/`](entity_ux/) contains a web app to guide naming sequences as an alternative to the [ReproIn Creator Spreadsheet](./ReproIn-creator.xlsx).
 
 It's live on https://NPACore.github.io/reproin-namer (via github pages w/ `doc/` symlink)
 
@@ -9,7 +9,7 @@ It's live on https://NPACore.github.io/reproin-namer (via github pages w/ `doc/`
 * [ReproIn](https://dbic-handbook.readthedocs.io/en/latest/mri/reproin.html) sequence name convention/standard
   * Siemens' scanner `Dot Cockpit` and `Exam Card` setup [walk through](https://github.com/ReproNim/reproin/blob/master/docs/walkthrough-1.md) (with screenshots)
   * automation implemented by [heudiconv](https://github.com/nipy/heudiconv/). See [reproin.py](https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py)
-  * [ReproIn Creator Spreedsheet](./ReproIn-creator.xlsx): MRRC template to ReproIn using a formula with per column BIDS key-value pairs. ![sheet with dropdown](ReproInCreator.png)
+  * [ReproIn Creator Spreadsheet](./ReproIn-creator.xlsx): MRRC template to ReproIn using a formula with per column BIDS key-value pairs. ![sheet with dropdown](ReproInCreator.png)
   * [Flywheel Study Design Sheet](https://docs.google.com/spreadsheets/d/1Yd74ewWAk4roA-IBfrQuOSMNR4DPxhB9/edit#gid=1495259008) (cf. [gitlab template folder](https://gitlab.com/flywheel-io/public/bids-client/-/tree/master/flywheel_bids/templates))
 * goal is near automated [BIDS](https://bids-specification.readthedocs.io/en/stable/#the-brain-imaging-data-structure) Brain Imaging Data Structure conforming scanner dicom to nifti image+json sidecar name conversion.
    * Ideal for input in [fmriprep](https://fmriprep.org/en/stable/)
@@ -47,7 +47,7 @@ See [`output-filelist.txt`](txt/output-filelist.txt) for full list.
 | [`validate.txt`](txt/validate.txt)          | `bids-validator` output, using [.bidsignore](bidsignore)|
 
 # Issues
-* path `SPA_Luna/20231103lunapilotspa2/sub-20231103lunapilotspa2` has redudant ID folder. Should be `SPA_Luna/sub-20231103lunapilotspa2`?
+* path `SPA_Luna/20231103lunapilotspa2/sub-20231103lunapilotspa2` has redundant ID folder. Should be `SPA_Luna/sub-20231103lunapilotspa2`?
 * Does not pass bids validation. see [`validate.txt`](txt/validate.txt).
   * multiple echos as e.g. `_heudiconv323_e5` instead of `_echo-5` 
   * no `.json` files!? (see missing in [`output-filelist.txt`](txt/output-filelist.txt))

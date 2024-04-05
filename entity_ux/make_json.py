@@ -17,7 +17,7 @@ write_json(f'bids-all_ver-{ver}.json', bids_dict)
 
 
 """
-build a table indexed by datatype. with list of suffix poperties (display_name, description, entities)
+build a table indexed by datatype. with list of suffix properties (display_name, description, entities)
 >>> table.keys()
 dict_keys(['anat', 'dwi', 'fmap', 'func', 'perf', 'pet'])
 >>> table['anat'][0].keys()

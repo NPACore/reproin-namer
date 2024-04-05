@@ -1,4 +1,4 @@
-# for 01_dcm-bids.sh and imporant to be > than debian12 version 0.13
+# for 01_dcm-bids.sh and important to be > than debian12 version 0.13
 heudiconv >= 1.0.1
 
 # for 00_dcm-rewrite-from-xlsx.py. but system versions okay

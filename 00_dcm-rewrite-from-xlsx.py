@@ -18,7 +18,7 @@ for i, row in seq_conv.iterrows():
     ):
         continue
 
-    # final protocol wont save out derivatives (e.g. moco, tenesorFA)
+    # final protocol won't save out derivatives (e.g. moco, tenesorFA)
     # skip to save space and time
     if re.search('deriv|dwi.*_desc-',row["new_name"]):
         print(f'# skipping derivative {row["new_name"]}')

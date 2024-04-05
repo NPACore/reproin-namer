@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import bidsschematools.schema as schema
+from markdown import markdown
 import json
 import re
 
@@ -26,6 +27,11 @@ dict_keys(['entities', 'value', 'display_name', 'description', 'unit'])
 {'suffixes': ['MP2RAGE'], 'extensions': ['.nii.gz', '.nii', '.json'], 'datatypes': ['anat'], 'entities': {'subject': 'required', 'session': 'optional', 'task': 'optional', 'acquisition': 'optional', 'ceagent': 'optional', 'reconstruction': 'optional', 'run': 'optional', 'echo': 'optional', 'flip': 'optional', 'inversion': 'required', 'part': 'optional', 'chunk': 'optional'}}
 
 """
+
+# make html from descriptions
+for obj in ['entities', 'suffixes']:
+    for k in bids_dict['objects'][obj].keys():
+        bids_dict['objects'][obj][k]['description'] = markdown(bids_dict['objects'][obj][k]['description'])
 
 table = dict()
 for keydesc, rules in bids_dict['rules']['files']['raw'].items():

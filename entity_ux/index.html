@@ -120,7 +120,9 @@ function datatype_update_suffix(){
 
   for(const i in dt_suffix){
       const e = dt_suffix[i]
-      sel.innerHTML += "<option value=" + i + " title='"+ e['description'] + "'>" +
+      // replace single quote with html escape sequence
+      const desc = e['description'].replace("'", "&#39;");
+      sel.innerHTML += "<option value=" + i + " title='"+ desc + "'>" +
           e['display_name'] + " (" + e['value'] + ")</option>";
   }
   update_name()
@@ -146,7 +148,8 @@ function suffix_updated(){
   for(e_name in s["entities"]){
     const e = s["entities"][e_name]
     if(e['name'] == 'sub'){ continue; }
-    const new_input = `<input id='entity-${e['name']}' name='${e['name']}' type=text placeholder='${e['display_name']}' class='${e['required']}' oninput='update_name()' title='${e['description']}'/>`;
+    const desc = e['description'].replace("'", "&#39;");
+    const new_input = `<input id='entity-${e['name']}' name='${e['name']}' type=text placeholder='${e['display_name']}' class='${e['required']}' oninput='update_name()' title='${desc}'/>`;
     //console.log(new_input);
     ent_inputs.innerHTML += new_input;
     if(++i%n_on_line == 0){

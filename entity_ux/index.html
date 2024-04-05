@@ -220,7 +220,7 @@ function choose(dt, i) {
     <br>
 
     <h2>ReproIn specification</h2>
-    Defined on  <a href="https://dbic-handbook.readthedocs.io/en/latest/mri/reproin.html">dbic-handbook</a>. Parsed from DICOM to <a href="https://bids.neuroimaging.io/">BIDS</a> conforming nifti+json file hierarchy by <a href="https://heudiconv.readthedocs.io/en/latest/">heudiconv</a> in <a href="https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py">reproin.py</a>, ready to be input for <a href="https://bids-apps.neuroimaging.io/apps/">BIDS Apps</a>.
+    Defined on  <a href="https://dbic-handbook.readthedocs.io/en/latest/mri/reproin.html">dbic-handbook</a>. Parsed from DICOM to <a href="https://bids.neuroimaging.io/">BIDS</a> conforming nifti+json file hierarchy by <a href="https://heudiconv.readthedocs.io/en/latest/">heudiconv</a> in <a href="https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py">reproin.py</a> or via <a href="https://docs.flywheel.io/User_Guides/user_bids_study-design_spreadsheet/">Flywheel's</a> <a href="https://gitlab.com/flywheel-io/public/bids-client/-/blob/master/flywheel_bids/templates/reproin.json">curation template<a>, ready to be input for <a href="https://bids-apps.neuroimaging.io/apps/">BIDS Apps</a>.
     <pre><code>
       &lt;seqtype[-label]&gt;[_ses-&lt;SESID&gt;]
       [_task-&lt;TASKID&gt;][_acq-&lt;ACQLABEL&gt;][_run-&lt;RUNID&gt;][_dir-&lt;DIR&gt;][&lt;more BIDS&gt;]

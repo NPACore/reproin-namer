@@ -1,3 +1,10 @@
+# Namer
+[`entity_ux/`](entity_ux/) contains a web app to guide naming sequences as an alternative to the [ReproIn Creator Spreedsheet](./ReproIn-creator.xlsx).
+
+It's live on https://NPACore.github.io/reproin-namer (via github pages w/ `doc/` symlink)
+
+![web app screenshot with tooltips](entity_ux/reproin_creator_features.png)
+
 # Resources
 * [ReproIn](https://dbic-handbook.readthedocs.io/en/latest/mri/reproin.html) sequence name convention/standard
   * Siemens' scanner `Dot Cockpit` and `Exam Card` setup [walk through](https://github.com/ReproNim/reproin/blob/master/docs/walkthrough-1.md) (with screenshots)

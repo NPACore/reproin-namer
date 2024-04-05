@@ -2,6 +2,11 @@
 <html>
 <head><title>ReproIn and BIDS name builder</title>
 <style>
+div#floater {
+    float: right;
+    font-size: x-small;
+    text-align: right;
+}
 div#description {
     margin-top: 1em;
     /*background: #39444f;*/
@@ -174,6 +179,11 @@ function choose(dt, i) {
 </script>
 </head>
 <body onload="fetch_entity()">
+  <div id="floater">
+   <a href="https://github.com/NPACore/reproin-namer">
+<svg viewBox="0 0 16 16" width="14" height="14" class="octicon octicon-star" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg><br>source@github</a>
+   <br>
+  </div>
   <div id="reproin">
     <h2>Create a <a href="https://dbic-handbook.readthedocs.io/en/latest/mri/reproin.html">Reproin </a>spec conforming sequence name</h2>
         Pick a DataType and Suffix label to dynamically generate a name within the cockpit image below (text is selectable and copyable). <br>See <a href="#suffix-options"> enumerated descriptions </a> below for more info. <br> <span style=font-size:smaller> Suffix and entities details are described in <a href="https://bids-specification.readthedocs.io/en/stable/glossary.html">BIDS glossary</a>. Entity requirements are also tabulated in adjacent <a href="https://bids-specification.readthedocs.io/en/stable/appendices/entity-table.html"> BIDS entity table</a> documentation.</span>

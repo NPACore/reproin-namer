@@ -34,19 +34,36 @@ for obj in ['entities', 'suffixes']:
         bids_dict['objects'][obj][k]['description'] = markdown(bids_dict['objects'][obj][k]['description'])
 
 table = dict()
+# add reproin specific 'scout'
+bids_dict['objects']['suffixes']['scout'] = \
+    {"value": "scout",
+     "display_name": "Scout localizer",
+     "description": "ReproIn specific entity label for easily labeling a session. Using heudiconv, labeling this sequence session only is sufficent. You do not need to put <code>ses</code> on every sequence name! See <a href=https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py#L629>source reference</a>",
+     "unit": "arbitrary"}
+bids_dict['rules']['files']['raw']['anat']['scout'] = \
+     {"suffixes": ["scout"], "extensions": ['.dcm'],
+      "datatypes": ['anat'],
+      "entities": {"session": "optional", "acquisition": "optional"}}
+
 for keydesc, rules in bids_dict['rules']['files']['raw'].items():
-    for rule in rules.values():
+    # subkey is like nonparametric (anat), fmap (func)
+    # only used to add to description
+    for subkey, rule in rules.items():
 
         # only care about nifti files (MR data)
-        if '.nii' not in rule['extensions']:
+        if '.nii' not in rule.get('extensions') and subkey != 'scout':
             continue
 
         # get full entity information. repeats a lot of info but easy to query
         entities = {k: {**bids_dict['objects']['entities'][k], 'required': v}
                     for  k,v in rule['entities'].items()}
+
         # repeat entities and pull full object (desc, unit, display_name) for each suffix
         suffix_full = [{'entities': entities,
                         **bids_dict['objects']['suffixes'][i]} for i in rule['suffixes']]
+
+        for suffix in suffix_full:
+           suffix['description'] += f'\n<br><code>{subkey}</code>'
 
         # NB. currently all datatypes of interest are only in one datatype?
         # shouldn't epi be repeated for fmap and func? sbref for func and dwi?

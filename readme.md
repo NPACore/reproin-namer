@@ -1,5 +1,5 @@
 # Namer
-[`entity_ux/`](entity_ux/) contains a web app to guide naming sequences as an alternative to the [ReproIn Creator Spreadsheet](./ReproIn-creator.xlsx).
+[`entity_ux/`](entity_ux/) contains a web app to guide naming sequences as an alternative to this repo's [ReproIn Creator Spreadsheet](./ReproIn-creator.xlsx) and includes entity and suffix requirments and description pulled from [`bidsschematools`](https://bidsschematools.readthedocs.io/en/latest/).
 
 It's live on https://NPACore.github.io/reproin-namer (via github pages w/ `doc/` symlink)
 

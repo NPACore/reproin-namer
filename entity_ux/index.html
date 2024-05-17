@@ -49,17 +49,19 @@ label {
     font-family: sans;
  text-decoration: underline double;}
 
+tt { background: lightgrey; font-family: mono}
+
 /* style entity inputs */
 input[type=text] {
     width: 10em;
 }
-.required {
-    background: #800;
-    color: white;
-}
-.optional {
-    background: #dee;
-}
+
+/* text boxes */
+.required { background: #800; color: white; }
+.acq { background: #44e; color: white; }
+._custom { background: #dae; }
+.optional { background: #dee; }
+
 </style>
 <script>
 var entity_table;
@@ -110,7 +112,7 @@ function fill_suffix_opts(){
 }
 function datatype_update_suffix(){
   var dt = document.getElementById('datatype');
-  // clear even if empyt -- any change is worth resetting things
+  // clear even if empty -- any change is worth resetting things
   var sel = document.getElementById('suffix');
   sel.innerHTML = "<option value=''> </option>";
 
@@ -148,6 +150,7 @@ function suffix_updated(){
   for(e_name in s["entities"]){
     const e = s["entities"][e_name]
     if(e['name'] == 'sub'){ continue; }
+    if(e['name'] == 'acq'){ e['required'] = 'acq'; }
     const desc = e['description'].replace("'", "&#39;");
     const new_input = `<input id='entity-${e['name']}' name='${e['name']}' type=text placeholder='${e['display_name']}' class='${e['required']}' oninput='update_name()' title='${desc}'/>`;
     //console.log(new_input);
@@ -156,6 +159,9 @@ function suffix_updated(){
         ent_inputs.innerHTML += "<br>";
     }
   }
+
+  const cust_desc = 'After two underscores any arbitrary comment which will not matter to how layout in BIDS. But that one theoretically should not be necessary, and (ab)use of it would just signal lack of thought while preparing sequence name to start with since everything could have been expressed in BIDS fields.'
+   ent_inputs.innerHTML += `<br><br><input style='width:100%' id='entity-__custom' name='__custom' type=text placeholder='custom' class='_custom' oninput='update_name()' title='${cust_desc}'/>`;
 }
   
 function update_name(){
@@ -171,7 +177,11 @@ function update_name(){
   for(e of inputs_div.children){
       if(e.value == "" || e.value === undefined) { continue;}
       //console.log(e.name,e.value)
+     if( e.name === "__custom" ) {
+      reproin_name += "__" + e.value;
+     } else {
       reproin_name += "_" + e.name + "-" + e.value;
+     }
   }
   document.getElementById('reproin-name').innerHTML = reproin_name;
 
@@ -202,10 +212,13 @@ function choose(dt, i) {
 
        </span>
 <br>
-    <b style="font-size:smaller">Hints:<br>
-      hover your mouse over label options or entity text boxes to see the tooltip description<br>
-      Consider using <i>scout</i><a onclick="choose('anat', '37')" href="#">(choose)</a> to label the session (<a href="https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py#L629">ref source code</a>).
-</b></br>
+<details open style="font-size:smaller; font-weight:bold"><summary>Hints:</summary>
+      <ul>
+       <li>Hover your mouse over "Step 2" label options or "Step 3" entity text boxes to see the tooltip description.</li>
+       <li>Consider using <i>scout</i><a onclick="choose('anat', '37')" href="#">(choose)</a> to label the session (<a href="https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py#L629">ref source code</a>).</li>
+       <li> The <span class="acq">acquisition</span> entity is free form <small>(sans <tt>_</tt> or <tt>-</tt>)</small>. Use it "to distinguish a different set of parameters used for acquiring the same modality". <br>If that's too restrictive use the <span class="_custom">custom</span> field for "any arbitrary comment which will not matter to how layout in BIDS"</li>
+      </ul></details>
+</b>
     <div id="all-reproin-inputs">
       <div id=cont-datatype class=column>
         <label for=datatype> 1. Select DataType ("seqtype")</label></br>

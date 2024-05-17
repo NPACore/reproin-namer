@@ -16,7 +16,7 @@ div#description {
 a.bids-link { font-size:x-small; }
 
 /* text over a cockpit image background */
-div#reproin-name {
+div.scanner {
     padding-top: 87px;
     padding-left: 72px;
     padding-bottom: 1em;
@@ -27,6 +27,7 @@ div#reproin-name {
     font-family: helvetica;
     font-weight: bolder;
 }
+div.reproin-name { padding-bottom: 1em; }
 #all-reproin-inputs {
     padding-top: 1em;
     padding-bottom: .5em;
@@ -164,6 +165,11 @@ function suffix_updated(){
    ent_inputs.innerHTML += `<br><br><input style='width:100%' id='entity-__custom' name='__custom' type=text placeholder='custom' class='_custom' oninput='update_name()' title='${cust_desc}'/>`;
 }
   
+/**
+ * update #reproin-name like seqtype_label_entity-value_entity-value
+ * #entities-text>__custom is treated special
+ * 
+*/
 function update_name(){
   const datatype = document.getElementById('datatype').value;
   const suffix_i = document.getElementById('suffix').value
@@ -185,6 +191,20 @@ function update_name(){
   }
   document.getElementById('reproin-name').innerHTML = reproin_name;
 
+}
+
+function new_reproin_name(){
+  let main = document.getElementById('reproin-name');
+  if(main.innerHTML === " &nbsp; " ) {
+     return;
+  }
+  var main_clone = main.cloneNode(true);
+  main_clone.id = "reproin-name-x"; // TODO dynamically generate
+   main_clone.innerHTML += `<button onclick='document.getElementById("${main_clone.id}").remove()'>x</a>`;
+  main.parentElement.prepend(main_clone);
+}
+function reproin_name_clear(){
+  document.getElementById('reproin-name').innerHTML = " &nbsp; ";
 }
   
 function choose(dt, i) {
@@ -229,14 +249,16 @@ function choose(dt, i) {
         <select size=5 id="suffix" name="suffix" onchange="suffix_updated()"> </select>
       </div>
      <div id=cont-entities class=column>
-       <label>3. Detail <span class="required">required</span> & relevant entities</label> <br>
+       <label>3. Detail <span class="required">required</span> &amp; relevant entities</label> <br>
         <div id="entities-text"></div>
     </div>
     </div>
 
     <div style="display: flex; justify-content:center">
-    <div class="scanner" id="reproin-name"> &nbsp; </div>
+       <div class="scanner"><div class="reproin-name" id="reproin-name"> &nbsp; </div></div>
     </div>
+    <div><button  onclick="new_reproin_name()">new</button>
+         <button  onclick="reproin_name_clear()">clear</button></div>
     <p style='padding-top:1em;padding-bottom:0;'> Selected Suffix Description:</p>
     <div class="desc" id="description"></div>
     <br>

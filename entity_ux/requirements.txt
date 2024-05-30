@@ -1,2 +1,3 @@
-bidsschematools >= 0.8.0
+#bidsschematools >= 0.8.0
+bidsschematools @ git+https://github.com/bids-standard/bids-specification@bep022#subdirectory=tools/schemacode
 markdown >= 3.6

@@ -65,4 +65,4 @@ def dicom_rewrite_pname():
     change_protocol_name(args.new_name, args.filename, args.output_folder)
 
 if __name__ == "__main__":
-    dicom_rewrite_namer()
+    dicom_rewrite_pname()

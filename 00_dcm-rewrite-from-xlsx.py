@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""
-"""
+""" """
+
 import pandas as pd
 import reproin_namer
 
+
 def rename_with_xlsx(xlsx_file, raw_root):
     """with spreadsheet file containing
-      'new reproIn seq name', 'folder','seqno_oldseqname', and 'new_name'
+    'new reproIn seq name', 'folder','seqno_oldseqname', and 'new_name'
     """
     seq_conv = pd.read_excel(xslx_file).rename(
         columns={"new reproIn seq name": "new_name"}
@@ -21,18 +22,22 @@ def rename_with_xlsx(xlsx_file, raw_root):
 
         # final protocol won't save out derivatives (e.g. moco, tenesorFA)
         # skip to save space and time
-        if re.search('deriv|dwi.*_desc-',row["new_name"]):
+        if re.search("deriv|dwi.*_desc-", row["new_name"]):
             print(f'# skipping derivative {row["new_name"]}')
             continue
 
-        old_folder = os.path.join(raw_root, row["folder"], "DICOM", row["seqno_oldseqname"])
+        old_folder = os.path.join(
+            raw_root, row["folder"], "DICOM", row["seqno_oldseqname"]
+        )
         session = row["folder"]
-
 
         dcm_list = os.path.join(old_folder, "*IMA")
         out_dir = name_from_dicom(dcm_list[0])
-        print(f"{session} {row['seqno_oldseqname']} => {row['new_name']} ({len(seq_file_list)} dicom)")
+        print(
+            f"{session} {row['seqno_oldseqname']} => {row['new_name']} ({len(seq_file_list)} dicom)"
+        )
         change_protocol_name(row["new_name"], dcm_list, out_dir)
+
 
 if __name__ == "__main__":
     xlsx_file = "./7T-LunaSPA_ReproIn-SeqName.xlsx"

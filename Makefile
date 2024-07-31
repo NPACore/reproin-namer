@@ -1,20 +1,41 @@
 .PHONY: all clean
 .SUFFIXES:
 
-all: txt/output-filelist.txt txt/validate.txt txt/input-diff.txt txt/input-diff2.txt
+.ONESHELL:
+all: txt/validate.txt txt/input-diff.txt
+
+.ONESHELL:
+examples/dicom/6/: examples/
+	cd examples
+	wget https://github.com/user-attachments/files/15515915/gre_phantom_dcm_nii.zip
+	unzip gre_phantom_dcm_nii.zip
+	cd dicom/
+	mkdir {5,6}
+	mv TESTBR.MR.DEV-SCHIRDA_041119_BRAINO.0005.* 5
+	mv TESTBR.MR.DEV-SCHIRDA_041119_BRAINO.0006.* 6
 
 .venv/bin/activate:
 	./setup_env.bash
 
+dcm-rehead/: examples/dicom/6/ | .venv/bin/activate
+	source .venv/bin/activate && \
+	dicom-rewrite-pname -o $@/5 -n fmap_acq-dwi examples/dicom/5/*
+	dicom-rewrite-pname -o $@/6 -n fmap_acq-dwi examples/dicom/6/*
+
+bids/:  dcm-rehead/
+	./01_dcm-bids.sh $</*/
+
+txt/validate.txt:	bids/ 
+	# NB. last directory shouldn't exist? see readme issues
+	bids-validator --verbose --no-color bids/dev/schirda/041119_BRAINO/testbr/ |tee $@
+
+#### diffing checking name changes
 txt/input-orig.txt: | txt/
 	# dcmdirtab from lncdtools: https://github.com/lncd/lncdtools
-	dcmdirtab -d '/Volumes/Hera/Raw/MRprojects/SPA/Pilot/2*/DICOM/*' > $@
+	dcmdirtab -d 'examples/dicom/*' > $@
 
-dcm-rehead/:
-	./00_dcm-rewrite-from-xlsx.py
-
-txt/input-reproin.txt: dcm-rehead/ $(wildcard dcm-rehead/2*/0*/)
-	dcmdirtab -d 'dcm-rehead/2*/0*/' > $@
+txt/input-reproin.txt: dcm-rehead/ $(wildcard dcm-rehead/*)
+	dcmdirtab -d 'dcm-rehead/*' > $@
 
 txt/input-diff.txt: txt/input-orig.txt txt/input-reproin.txt
 	bash -c "diff -W 30 -wby <(cut -f 2-3 txt/input-orig.txt|sort -n) <(cut -f 2-3 txt/input-reproin.txt|sort -n) || :" > $@
@@ -22,21 +43,11 @@ txt/input-diff.txt: txt/input-orig.txt txt/input-reproin.txt
 txt/input-diff2.txt: txt/input-orig.txt txt/input-reproin.txt
 	Rscript seqdiff.R > $@
 
-bids/:  txt/input-reproin.txt .venv/bin/activate
-	./01_dcm-bids.sh
-
 txt/output-filelist.txt: bids/
 	find bids/ -iname '*nii.gz' -or -iname '*json' > $@
-
-bids/MRRC/SPA_Luna/20231103lunapilotspa2/.bidsignore: bidsignore
-	cp $< $@
-
-txt/validate.txt:	bids/ bids/MRRC/SPA_Luna/20231103lunapilotspa2/.bidsignore
-	# NB. last directory shouldn't exist? see readme issues
-	bids-validator --verbose --no-color bids/MRRC/SPA_Luna/20231103lunapilotspa2/ |tee $@
 
 %/:
 	mkdir -p $@
 
 clean:
-	rm -rf bids/ dcm-rehead/
+	rm -rf bids/ dcm-rehead/ txt/input-*.txt

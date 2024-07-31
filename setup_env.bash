@@ -8,6 +8,8 @@ test -d .venv || python3 -m venv .venv
 [ -z "$(find .venv -iname '*heudiconv*'|sed 1q)" ] &&
    pip install -r requirements.txt
 
+command -v dicom-rewrite-pname || pip install -e .
+
 command -v bids-validator ||
    npm install bids-validator -g
 

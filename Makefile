@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 .PHONY: all clean
 .SUFFIXES:
 
@@ -10,7 +11,8 @@ examples/dicom/6/: examples/
 	wget https://github.com/user-attachments/files/15515915/gre_phantom_dcm_nii.zip
 	unzip gre_phantom_dcm_nii.zip
 	cd dicom/
-	mkdir {5,6}
+	mkdir 5
+	mkdir 6
 	mv TESTBR.MR.DEV-SCHIRDA_041119_BRAINO.0005.* 5
 	mv TESTBR.MR.DEV-SCHIRDA_041119_BRAINO.0006.* 6
 
@@ -18,10 +20,16 @@ examples/dicom/6/: examples/
 	./setup_env.bash
 
 dcm-rehead/: examples/dicom/6/ | .venv/bin/activate
-	source .venv/bin/activate && \
-	dicom-rewrite-pname -o $@/5 -n fmap_acq-dwi examples/dicom/5/*
-	dicom-rewrite-pname -o $@/6 -n fmap_acq-dwi examples/dicom/6/*
+	. .venv/bin/activate && \
+	rename 's/-//g' examples/dicom/5/* && \
+	rename 's/_//g' examples/dicom/5/* && \
+	rename 's/-//g' examples/dicom/6/* && \
+	rename 's/_//g' examples/dicom/6/* && \
+	dicom-rewrite-pname -o dcm-rehead//5 -n fmapacqdwi examples/dicom/5/* && \
+	dicom-rewrite-pname -o dcm-rehead//6 -n fmapacqdwi examples/dicom/6/*
 
+txt/input-reproin.txt: dcm-rehead/ $(wildcard dcm-rehead/*)
+	dcmdirtab -d 'dcm-rehead/*' > $@
 bids/:  dcm-rehead/
 	./01_dcm-bids.sh $</*/
 

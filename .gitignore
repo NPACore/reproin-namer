@@ -3,3 +3,4 @@ dcm-rehead/
 bids/
 .#*
 .venv/
+node_modules

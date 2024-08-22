@@ -11,22 +11,28 @@ examples/dicom/6/: examples/
 	wget https://github.com/user-attachments/files/15515915/gre_phantom_dcm_nii.zip
 	unzip gre_phantom_dcm_nii.zip
 	cd dicom/
-	mkdir 5
-	mkdir 6
+	mkdir 5 6
 	mv TESTBR.MR.DEV-SCHIRDA_041119_BRAINO.0005.* 5
 	mv TESTBR.MR.DEV-SCHIRDA_041119_BRAINO.0006.* 6
 
 .venv/bin/activate:
 	./setup_env.bash
 
+# want to rename each dicom's acquistion name stored in the header
+# will match reproin format (BIDS-like)
+# ISSUE: one scanner sequence produces two folders. one should be fmap-mag the other fmap-phase
+#        but can only set one name (at the scanner). so leave off the '-mag' or '-phase'
+.ONESHELL:
 dcm-rehead/: examples/dicom/6/ | .venv/bin/activate
-	. .venv/bin/activate && \
-	rename 's/-//g' examples/dicom/5/* && \
-	rename 's/_//g' examples/dicom/5/* && \
-	rename 's/-//g' examples/dicom/6/* && \
-	rename 's/_//g' examples/dicom/6/* && \
-	dicom-rewrite-pname -o dcm-rehead//5 -n fmapacqdwi examples/dicom/5/* && \
-	dicom-rewrite-pname -o dcm-rehead//6 -n fmapacqdwi examples/dicom/6/*
+	# rename 's/[-_]//g' examples/dicom/[56]/*
+	# NB!! why kill the - and _ separaters in the original files?
+	#      probably don't want to touch these
+	#      we are only testing what happens if we change the dicom acq. seq. name
+	#      we can't control the actual output file names
+	#
+	. .venv/bin/activate
+	dicom-rewrite-pname -o dcm-rehead/5 -n fmap_acq-dwi examples/dicom/5/*
+	dicom-rewrite-pname -o dcm-rehead/6 -n fmap_acq-dwi examples/dicom/6/*
 
 txt/input-reproin.txt: dcm-rehead/ $(wildcard dcm-rehead/*)
 	dcmdirtab -d 'dcm-rehead/*' > $@

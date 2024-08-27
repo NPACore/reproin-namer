@@ -81,36 +81,45 @@ function fill_datatype(){
         sel.innerHTML += "<option value=" + k + ">" + k + "</option>";
     }
 }
-function fill_suffix_opts(){
+function fill_suffix_opts() {
   var cont = document.getElementById('cont-suffix-opts');
   var new_html = "";
-  for(dt in entity_table){
-      for(i in entity_table[dt]){
-          s =  entity_table[dt][i]; // NB use index for value in label select. will use for onclick=choose
-          const lcname = s['value'].toLowerCase();
-          const bids_link = `https://bids-specification.readthedocs.io/en/stable/glossary.html#${lcname}-suffixes`;
-          // WIP: use #:~:text= fragment url to go to yaml definition
-          const bids_yaml = `https://github.com/bids-standard/bids-specification/blob/master/src/schema/objects/suffixes.yaml#:~:text=${s['value']}:,value:%20${lcname}`;
-          // <a href="${bids_yaml}" class=bids-link targegt=_blank>[def]</a>
+  for (dt in entity_table) {
+    // Prepend "no suffix" option if dt is "fmap"
+    if (dt === "fmap") {
+      entity_table[dt].unshift({
+        value: "nosuffix",
+        display_name: "No Suffix",
+        description: "Multiple series number output from a single sequence",
+        entities: {}  // No additional entities required
+      });
+    }
 
-          const code_span = `<span class=entity-code>[${dt}/${s['value']}]</span>`
-          new_html += `<div class=entity-item><h3>${code_span} ${s['display_name']} <a href="${bids_link}" class=bids-link target=_blank>BIDS glossary</a></h3>`
-          new_html += `<p>${s['description']}</p>`;
-          const entries = entity_table[dt][i]['entities'];
-          var required = [];
-          for(e in entries) {
-              if(entries[e]['required'] == 'required' && e != 'subject') {
-                  required.push(entries[e]['display_name'])
-              }
-          }
-          if(required.length>0){
-              new_html += "<b>Additional entities required: "+ required.join(", ") + "</b><br>";
-          }
-          new_html += `<a onclick="choose('${dt}', '${i}')" href="#">choose me!</a></div>`
+    for (i in entity_table[dt]) {
+      s = entity_table[dt][i]; // Use index for value in label select.
+      const lcname = s['value'].toLowerCase();
+      const bids_link = `https://bids-specification.readthedocs.io/en/stable/glossary.html#${lcname}-suffixes`;
+
+      const code_span = `<span class=entity-code>[${dt}/${s['value']}]</span>`;
+      new_html += `<div class=entity-item><h3>${code_span} ${s['display_name']} <a href="${bids_link}" class=bids-link target=_blank>BIDS glossary</a></h3>`;
+      new_html += `<p>${s['description']}</p>`;
+      
+      const entries = entity_table[dt][i]['entities'];
+      var required = [];
+      for (e in entries) {
+        if (entries[e]['required'] == 'required' && e != 'subject') {
+          required.push(entries[e]['display_name']);
+        }
       }
-      cont.innerHTML= new_html
+      if (required.length > 0) {
+        new_html += "<b>Additional entities required: " + required.join(", ") + "</b><br>";
+      }
+      new_html += `<a onclick="choose('${dt}', '${i}')" href="#">choose me!</a></div>`;
+    }
+    cont.innerHTML = new_html;
   }
 }
+
 function datatype_update_suffix(){
   var dt = document.getElementById('datatype');
   // clear even if empty -- any change is worth resetting things
@@ -170,28 +179,34 @@ function suffix_updated(){
  * #entities-text>__custom is treated special
  * 
 */
-function update_name(){
+function update_name() {
   const datatype = document.getElementById('datatype').value;
-  const suffix_i = document.getElementById('suffix').value
+  const suffix_i = document.getElementById('suffix').value;
   var suffix = "";
-  if(datatype != "" && suffix_i != ""){
+  
+  if (datatype != "" && suffix_i != "") {
     suffix = entity_table[datatype][suffix_i]['value'];
   }
+
+  // Check if the "No Suffix" option is selected
+  if (suffix === "nosuffix") {
+    return;  // Do not modify reproin_name if "No Suffix" is selected
+  }
+
   var reproin_name = datatype + "-" + suffix;
 
   const inputs_div = document.getElementById('entities-text');
-  for(e of inputs_div.children){
-      if(e.value == "" || e.value === undefined) { continue;}
-      //console.log(e.name,e.value)
-     if( e.name === "__custom" ) {
+  for (e of inputs_div.children) {
+    if (e.value == "" || e.value === undefined) { continue; }
+    if (e.name === "__custom") {
       reproin_name += "__" + e.value;
-     } else {
+    } else {
       reproin_name += "_" + e.name + "-" + e.value;
-     }
+    }
   }
   document.getElementById('reproin-name').innerHTML = reproin_name;
-
 }
+
 
 function new_reproin_name(){
   let main = document.getElementById('reproin-name');

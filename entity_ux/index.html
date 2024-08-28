@@ -85,13 +85,18 @@ function fill_suffix_opts() {
   var cont = document.getElementById('cont-suffix-opts');
   var new_html = "";
   for (dt in entity_table) {
-    // Prepend "no suffix" option if dt is "fmap"
+    // one GRE fmap sequence on the scanner can have multiple oupts with different suffixes
+    // solution is to leave suffix unspecified for downstream software to figure out
     if (dt === "fmap") {
       entity_table[dt].unshift({
-        value: "nosuffix",
-        display_name: "No Suffix",
-        description: "Multiple series number output from a single sequence",
-        entities: {}  // No additional entities required
+        value: "",
+        display_name: "Multiple",
+        description:  "Multiple output series from a single scan sequence. Suffix is left blank for downstream software to disambiguate with more information (e.g. multiple folders with distinguishing dicom headers)",
+
+        // want generic entity options (ses, run, acq, chunk). same as mag or phase would have
+        // fmap[0] is likely phasediff. has same options as phase and mag
+        // copy phasediff b/c entities array has nested structure that includes tooltip popup text
+        entities: entity_table['fmap'][0].entities
       });
     }
 
@@ -175,8 +180,11 @@ function suffix_updated(){
 }
   
 /**
- * update #reproin-name like seqtype_label_entity-value_entity-value
- * #entities-text>__custom is treated special
+ * update #reproin-name like
+ *   'seqtype-suffixlabel_entity-value_entity-value'
+ * special consideration
+ *   #entities-text>__custom  - no 'entity-', instead '__value'
+ *   nosuffix                 - 'seqtype-suffix' is just 'seqtype'
  * 
 */
 function update_name() {
@@ -188,16 +196,23 @@ function update_name() {
     suffix = entity_table[datatype][suffix_i]['value'];
   }
 
-  // Check if the "No Suffix" option is selected
-  if (suffix === "nosuffix") {
-    return;  // Do not modify reproin_name if "No Suffix" is selected
+  /*
+   special case (gre fmap) where one sequence creates multi-modality output
+   but one reproin name can't accommodate both so we'll depend on
+   downstream software (heudiconv) to fill in the blanks we leave
+   instead of 'fmap-', we have 'fmap'
+  */
+  var reproin_name = datatype
+  if (suffix !== '') {
+    reproin_name += "-" + suffix;
   }
 
-  var reproin_name = datatype + "-" + suffix;
 
   const inputs_div = document.getElementById('entities-text');
   for (e of inputs_div.children) {
     if (e.value == "" || e.value === undefined) { continue; }
+    // custom is a catch all and is appendd differently
+    // NB. expect e.name to be custom as very last iteration of loop
     if (e.name === "__custom") {
       reproin_name += "__" + e.value;
     } else {

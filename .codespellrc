@@ -1,6 +1,6 @@
 [codespell]
 # Ref: https://github.com/codespell-project/codespell#using-a-config-file
-skip = .git*,.codespellrc
+skip = .git*,.codespellrc,./entity_ux/bids-specification,.venv*,./node_modules,./entity_ux/.venv*,./entity_ux/node_modules,./examples,*pdf,*tsv,./info.txt,*.json
 check-hidden = true
 # ignore-regex = 
 # ignore-words-list =

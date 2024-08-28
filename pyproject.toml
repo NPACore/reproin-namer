@@ -9,7 +9,7 @@ dependencies = [
     "heudiconv>=1.1.3",
     "pydicom>=2.4.4",
     "pandas>=2.2.2",
-    # 20240605 -- BEP022=MRSI extention proposal
+    # 20240605 -- BEP022=MRSI extension proposal
     "bidsschematools@git+https://github.com/bids-standard/bids-specification@bep022#subdirectory=tools/schemacode",
 ]
 readme = "readme.md"

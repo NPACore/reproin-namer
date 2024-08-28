@@ -42,7 +42,7 @@ table = dict()
 bids_dict["objects"]["suffixes"]["scout"] = {
     "value": "scout",
     "display_name": "Scout localizer",
-    "description": "ReproIn specific entity label for easily labeling a session. Using heudiconv, labeling this sequence session only is sufficent. You do not need to put <code>ses</code> on every sequence name! See <a href=https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py#L629>source reference</a>",
+    "description": "ReproIn specific entity label for easily labeling a session. Using heudiconv, labeling this sequence session only is sufficient. You do not need to put <code>ses</code> on every sequence name! See <a href=https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py#L629>source reference</a>",
     "unit": "arbitrary",
 }
 bids_dict["rules"]["files"]["raw"]["anat"]["scout"] = {

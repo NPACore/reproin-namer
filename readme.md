@@ -12,6 +12,7 @@ It's live on https://NPACore.github.io/reproin-namer (via github pages w/ `doc/`
 <a href=https://zenodo.org/records/15522633><img src=https://zenodo.org/badge/DOI/10.5281/zenodo.15522633.svg></a>
 
 ## Local and Offline
+The web app also on https://npacore.github.io/reproin-namer can be used locally.
 ```bash
 # from relase
 unzip -d reproin-namer release_1.0.0.zip

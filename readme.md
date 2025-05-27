@@ -1,9 +1,27 @@
 # Namer
-[`entity_ux/`](entity_ux/) contains a web app to guide naming sequences as an alternative to this repo's [ReproIn Creator Spreadsheet](./ReproIn-creator.xlsx) and includes entity and suffix requirements and description pulled from [`bidsschematools`](https://bidsschematools.readthedocs.io/en/latest/).
+[`entity_ux/`](entity_ux/) contains a web app to guide naming sequences.
 
-It's live on https://NPACore.github.io/reproin-namer (via github pages w/ `doc/` symlink)
+It's live on https://NPACore.github.io/reproin-namer (via github pages w/ `doc/` symlink). The release zip also contains the static assets needed to view locally and offline.
+
 
 ![web app screenshot with tooltips](entity_ux/reproin_creator_features.png)
+
+
+[ReproIn Creator Spreadsheet](./ReproIn-creator.xlsx) is an alternative. Both the web app and sheet include entity and suffix requirements and description pulled from [`bidsschematools`](https://bidsschematools.readthedocs.io/en/latest/).
+
+<a href=https://zenodo.org/records/15522633><img src=https://zenodo.org/badge/DOI/10.5281/zenodo.15522633.svg></a>
+
+## Local and Offline
+```bash
+# from relase
+unzip -d reproin-namer release_1.0.0.zip
+firefox reproin-namer/index.html
+
+# from git
+git clone https://github.com/NPACore/reproin-namer
+cd reproin-namer/entity_ux
+firefox index.html
+```
 
 # Resources
 * [ReproIn](https://dbic-handbook.readthedocs.io/en/latest/mri/reproin.html) sequence name convention/standard
@@ -18,7 +36,12 @@ It's live on https://NPACore.github.io/reproin-namer (via github pages w/ `doc/`
    * and maybe (hopeful future) facilitate NIH share mandate compliance (cf. [bids2nda](https://github.com/bids-standard/bids2nda))
    * for validation see [bids-validator](https://github.com/bids-standard/bids-validator/) (nodejs)
 
-# Pipeline
+# Testing names
+
+Consistant naming is not an end in itself! We also want to confirm ReproIn names can easily be moved to BIDS. To that end, this repo also hosts scripts that can update DICOM headers and test the BIDS naming piepline.
+
+## Pipeline
+
 1. `00_dcm-rewrite-from-xlsx.py` rewrites `(0018, 1030) Protocol Name` using ReproIn conforming names in `7T-LunaSPA_ReproIn-SeqName.xlsx` (see sheet w/equations on [onedrive](https://pitt-my.sharepoint.com/:x:/g/personal/foran_pitt_edu/ERWaFHh1IRNCoIXmVds9QE8BzCRw-CqZGFjp4lqlOfOVmg?e=1fnslX))
 1. `01_dcm-bids.sh` makes
 ```
@@ -36,7 +59,7 @@ sub-20231103lunapilotspa2_acq-b0pfc_magnitude_heudiconv323_e5.nii.gz
 
 See [`output-filelist.txt`](txt/output-filelist.txt) for full list.
 
-# Outputs
+## Outputs
 [`Makefile`](Makefile) builds files in [`txt/`](txt/)
 
 | file                | desc |
@@ -46,7 +69,7 @@ See [`output-filelist.txt`](txt/output-filelist.txt) for full list.
 | [`output-filelist.txt`](txt/output-filelist.txt) | heudiconv output: BIDS filelist |
 | [`validate.txt`](txt/validate.txt)          | `bids-validator` output, using [.bidsignore](bidsignore)|
 
-# Issues
+## Issues
 * path `SPA_Luna/20231103lunapilotspa2/sub-20231103lunapilotspa2` has redundant ID folder. Should be `SPA_Luna/sub-20231103lunapilotspa2`?
 * Does not pass bids validation. see [`validate.txt`](txt/validate.txt).
   * multiple echos as e.g. `_heudiconv323_e5` instead of `_echo-5` 
@@ -54,7 +77,7 @@ See [`output-filelist.txt`](txt/output-filelist.txt) for full list.
 * how to encode session? only need in one sequence name?
 * `_dicom/` directoires are unwanted (but not a problem for Flywheel?). Ignored with [.bidsignore](bidsignore)
 
-# Dicom Notes
+## Dicom Notes
 
 * `00_dcm-rewrite-from-xlsx.py` edits `Protocol Name` and outputs to folders using `Series Number`. 
 * `Study Description` sets output folder using `heudiconv --files`: `MRRC^SPA_Luna` becomes `bids/MRRC/SPA_Luna/`

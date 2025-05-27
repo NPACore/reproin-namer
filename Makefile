@@ -1,5 +1,8 @@
 .PHONY: all clean
 .SUFFIXES:
+release_version := 1.0.0
+release_$(release_version).zip:
+	cd docs/ && zip ../$@ index.html bids-table_ver-1.10.0dev.json siemens_doccockpit.png
 
 .ONESHELL:
 all: txt/validate.txt txt/input-diff.txt
